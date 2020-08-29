@@ -1,0 +1,7 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 90vh;
+}
+/*# sourceMappingURL=styles.css.map */

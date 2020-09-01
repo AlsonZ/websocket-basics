@@ -10,10 +10,14 @@ $highlight-color: rgb(38, 91, 236);
 
 
 body {
-  display: flex;
+  display: grid;
+  grid-template-rows: 10% 90%;
   flex-direction: column;
-  place-items: center;
-  min-height: 90vh;
+  justify-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -21,18 +25,39 @@ body {
   @include button;
 }
 
+.input {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
 .inputText {
   padding: 0.3rem;
   border: 2px solid lightgrey;
   border-radius: 3px;
-
+  
   &:focus {
     outline: none;
     border-color: $highlight-color;
   }
 }
+.main {
+  height: 90%;
+  width: 90%;
+  margin: 0;
 
+}
 .messages {
   overflow-y: auto;
-  height: 20rem;
+  overflow-x: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,13 +1,17 @@
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 10% 90%;
+      grid-template-rows: 10% 90%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  place-items: center;
-  min-height: 90vh;
+  justify-items: center;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 0;
+  margin: 0;
 }
 
 .button {
@@ -16,6 +20,17 @@ body {
   color: white;
   background-color: #265bec;
   border-radius: 3px;
+}
+
+.input {
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .inputText {
@@ -29,8 +44,29 @@ body {
   border-color: #265bec;
 }
 
+.main {
+  height: 90%;
+  width: 90%;
+  margin: 0;
+}
+
 .messages {
   overflow-y: auto;
-  height: 20rem;
+  overflow-x: auto;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */

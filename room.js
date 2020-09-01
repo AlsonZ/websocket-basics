@@ -25,8 +25,7 @@ const openWebSocket = () => {
     ws = null;
   }
 }
-
-sendButton.onclick = () => {
+const sendMessage = () => {
   if(!ws) {
     showMessage('No Connection avaliable!');
     return;
@@ -36,6 +35,14 @@ sendButton.onclick = () => {
   }
   ws.send(messageText.value);
 }
+sendButton.onclick = () => {
+  sendMessage();
+}
+messageText.addEventListener('keyup', (e) => {
+  if(e.keyCode === 13) {
+    sendMessage();
+  }
+})
 
 const showMessage = ({author, message}) => {
   let newMessage = document.createElement('li');
@@ -44,7 +51,6 @@ const showMessage = ({author, message}) => {
   //   newMessage.classList += 'own-message';
   // }
   messageList.appendChild(newMessage);
-
   messageText.value = '';
 }
 

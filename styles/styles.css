@@ -1,7 +1,36 @@
 body {
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   place-items: center;
   min-height: 90vh;
+}
+
+#sendButton {
+  border: none;
+  padding: 0.4rem;
+  color: white;
+  background-color: #265bec;
+  border-radius: 3px;
+}
+
+#messageText {
+  padding: 0.3rem;
+  border: 2px solid lightgrey;
+  border-radius: 3px;
+}
+
+#messageText:focus {
+  outline: none;
+  border-color: #265bec;
+}
+
+.messages {
+  overflow-y: auto;
+  height: 20rem;
 }
 /*# sourceMappingURL=styles.css.map */

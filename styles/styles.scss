@@ -1,5 +1,38 @@
+$highlight-color: rgb(38, 91, 236);
+
+@mixin button {
+  border: none;
+  padding: 0.4rem;
+  color: white;
+  background-color: $highlight-color;
+  border-radius: 3px;
+}
+
+
 body {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   place-items: center;
   min-height: 90vh;
+}
+
+
+#sendButton {
+  @include button;
+}
+
+#messageText {
+  padding: 0.3rem;
+  border: 2px solid lightgrey;
+  border-radius: 3px;
+
+  &:focus {
+    outline: none;
+    border-color: $highlight-color;
+  }
+}
+
+.messages {
+  overflow-y: auto;
+  height: 20rem;
 }

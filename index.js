@@ -3,18 +3,6 @@ const messageText = document.getElementById('messageText');
 const messages = document.getElementById('messages');
 let ws;
 
-// ws.addEventListener('open', () => {
-//   console.log('we are connected');
-
-//   ws.send('this is some data sent from frontend');
-//   // enter room?
-//   // get history
-// })
-
-// ws.addEventListener('message', (e) => {
-//   console.log(e);
-//   //add message to messages
-// });
 const openWebSocket = () => {
   if(ws) {
     ws.close();
@@ -45,7 +33,6 @@ sendButton.onclick = () => {
     return;
   }
   ws.send(messageText.value);
-  // showMessage(messageText.value);
 }
 
 const showMessage = ({author, message}) => {

@@ -1,6 +1,8 @@
 const sendButton = document.getElementById('sendButton');
 const messageText = document.getElementById('messageText');
 const messages = document.getElementById('messages');
+const messageList = document.getElementById('messageList');
+
 const username = localStorage.getItem('username');
 let ws;
 
@@ -12,7 +14,6 @@ const openWebSocket = () => {
   ws.onopen = () => {
     console.log('Connection made!');
   }
-  // ws.onmessage = ({ data }) => showMessage(data);
   ws.onmessage = (res) => {
     const resData = JSON.parse(res.data);
     console.log(resData);
@@ -37,12 +38,18 @@ sendButton.onclick = () => {
 }
 
 const showMessage = ({author, message}) => {
-  messages.textContent += `\r\n [${author}]: ${message}`;
+  let newMessage = document.createElement('li');
+  newMessage.textContent += `[${author}] ${message}`;
+  // if(author === username) {
+  //   newMessage.classList += 'own-message';
+  // }
+  messageList.appendChild(newMessage);
+
   messageText.value = '';
 }
 
 if(!username) {
-  // window.location.href="index.html";
+  window.location.href="index.html";
 }
 
 openWebSocket();

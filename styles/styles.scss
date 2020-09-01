@@ -17,11 +17,11 @@ body {
 }
 
 
-#sendButton {
+.button {
   @include button;
 }
 
-#messageText {
+.inputText {
   padding: 0.3rem;
   border: 2px solid lightgrey;
   border-radius: 3px;

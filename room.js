@@ -4,19 +4,21 @@ const messages = document.getElementById('messages');
 const messageList = document.getElementById('messageList');
 
 const username = localStorage.getItem('username');
+const room = localStorage.getItem('room');
 let ws;
 
 const openWebSocket = () => {
   if(ws) {
     ws.close();
   }
-  ws = new WebSocket(`ws://localhost:8082/?username=${username}`);
+  ws = new WebSocket(`ws://localhost:8082/?username=${username}&room=${room}`);
   ws.onopen = () => {
     console.log('Connection made!');
   }
   ws.onmessage = (res) => {
     const resData = JSON.parse(res.data);
     console.log(resData);
+    
     if(resData.message) {
       showMessage(resData);
     }
@@ -33,7 +35,11 @@ const sendMessage = () => {
   if(messageText.value === '' || messageText.value === ' ') {
     return;
   }
-  ws.send(messageText.value);
+  const data = {
+    isMsg: true,
+    message : messageText.value,
+  }
+  ws.send(JSON.stringify(data));
 }
 sendButton.onclick = () => {
   sendMessage();

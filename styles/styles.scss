@@ -25,8 +25,20 @@ body {
   @include button;
 }
 
+
+.main {
+  height: 90%;
+  width: 50rem;
+  margin: 0;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+}
+
 .input {
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   display: flex;
   gap: 5px;
   justify-content: center;
@@ -42,11 +54,7 @@ body {
   }
 
 }
-.main {
-  height: 90%;
-  width: 50rem;
-  margin: 0;
-}
+
 
 .message-list {
   overflow-y: auto;

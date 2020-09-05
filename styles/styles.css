@@ -22,8 +22,25 @@ body {
   border-radius: 3px;
 }
 
+.main {
+  height: 90%;
+  width: 50rem;
+  margin: 0;
+}
+
+.column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 15rem;
+}
+
 .input {
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,12 +59,6 @@ body {
 .inputText:focus {
   outline: none;
   border-color: #265bec;
-}
-
-.main {
-  height: 90%;
-  width: 50rem;
-  margin: 0;
 }
 
 .message-list {

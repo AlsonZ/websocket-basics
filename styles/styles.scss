@@ -11,13 +11,14 @@ $highlight-color: rgb(38, 91, 236);
 
 body {
   display: grid;
-  grid-template-rows: 10% 90%;
+  grid-template-rows: 5rem auto;
+  // grid-template-rows: 10% 90%;
   flex-direction: column;
   justify-items: center;
   min-height: 100vh;
   max-height: 100vh;
   padding: 0;
-  margin: 0;
+  margin: 0 10%;
 }
 
 
@@ -28,7 +29,7 @@ body {
 
 .main {
   height: 90%;
-  width: 50rem;
+  width: 100%;
   margin: 0;
 }
 .column {

@@ -1,8 +1,8 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 10% 90%;
-      grid-template-rows: 10% 90%;
+  -ms-grid-rows: 5rem auto;
+      grid-template-rows: 5rem auto;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -11,7 +11,7 @@ body {
   min-height: 100vh;
   max-height: 100vh;
   padding: 0;
-  margin: 0;
+  margin: 0 10%;
 }
 
 .button {
@@ -24,7 +24,7 @@ body {
 
 .main {
   height: 90%;
-  width: 50rem;
+  width: 100%;
   margin: 0;
 }
 

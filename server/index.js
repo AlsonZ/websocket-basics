@@ -1,7 +1,11 @@
 const WebSocket = require('ws');
 const url = require('url');
+const express = require('express');
+const http = require('http');
 
-const wss = new WebSocket.Server({port: 8082});
+const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
 
 const rooms = {}
 
@@ -24,6 +28,10 @@ wss.on('connection', (ws, req) => {
     }
   });
 });
+
+server.listen(process.env.PORT || 8082, () => {
+  console.log(`Server has started on port: ${server.address().port}`);
+})
 
 const addToRoom = (ws) => {
   console.log("user:", ws.id, "added to room");

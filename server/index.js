@@ -29,6 +29,16 @@ wss.on('connection', (ws, req) => {
       sendMsgToUsers(ws.room, ws.id, resData.message);
     }
   });
+  ws.on('close', () => {
+    console.log(ws.id, 'has exited');
+    for([index, user] of rooms[ws.room].users.entries()) {
+      if(user === ws) {
+        rooms[ws.room].users.splice(index, 1);
+        console.log(ws.id, 'has been removed');
+      }
+    }
+    ws.terminate();
+  })
 });
 
 server.listen(process.env.PORT || 8082, () => {

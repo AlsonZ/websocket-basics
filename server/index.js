@@ -31,11 +31,10 @@ wss.on('connection', (ws, req) => {
   });
   ws.on('close', () => {
     console.log(ws.id, 'has exited');
-    for([index, user] of rooms[ws.room].users.entries()) {
-      if(user === ws) {
-        rooms[ws.room].users.splice(index, 1);
-        console.log(ws.id, 'has been removed');
-      }
+    const index = rooms[ws.room].users.findIndex(user => user === ws)
+    if(index !== -1) {
+      rooms[ws.room].users.splice(index, 1);
+      console.log(ws.id, 'has been removed');
     }
     ws.terminate();
   })
